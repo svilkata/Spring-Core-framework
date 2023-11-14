@@ -1,8 +1,0 @@
-#Maven
-*/target/
-
-# IntelliJ
-.idea
-*.ipr
-*.iml
-*.iws

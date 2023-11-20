@@ -1,8 +1,5 @@
 package org.example.service;
 
-import org.example.util.DatabaseUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.logging.Logger;
 
 public class WebServicePersistenceManager implements PersistenceManager{

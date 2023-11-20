@@ -24,12 +24,18 @@ public class Application {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("org.example");
         PersistenceManager manager = context.getBean(location, PersistenceManager.class);
+        PersistenceManager manager2 = context.getBean(location, PersistenceManager.class);
         manager.save(message);
 
         context.getBean(WebServicePersistenceManager.class);
 
         BeanDefinition definition = context.getBeanFactory().getBeanDefinition(location);
         System.out.println(definition);
+        System.out.println(System.identityHashCode(manager)); //връща id-то на обекта от Java HEAP паметта
+        System.out.println(System.identityHashCode(manager2));
+
+        manager.save(message);
+
 //        Generic bean: class [org.example.service.DatabasePersistenceManager]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0;
 //        autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null;
 //        defined in file [/media/svilen/404677E04677D55E/SVILEN/bgjug/Spring Core framework/springcore/target/classes/org/example/service/DatabasePersistenceManager.class]

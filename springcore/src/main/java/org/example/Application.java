@@ -22,7 +22,8 @@ public class Application {
         String location = args[0]; // db, file
         String message = args[1];
 
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("org.example");
+//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("org.example");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Application.class.getPackage().getName());
         PersistenceManager manager = context.getBean(location, PersistenceManager.class);
         PersistenceManager manager2 = context.getBean(location, PersistenceManager.class);
         manager.save(message);
